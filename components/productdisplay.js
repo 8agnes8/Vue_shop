@@ -67,6 +67,7 @@ app.component('product-display', {
           this.reviews.push(review)
         }
     },
+    
     computed: {
         title() {
             return this.brand + ' ' + this.product
