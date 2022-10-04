@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <title>Vue Mastery</title>
-    <!-- import Styles -->
+    <!-- Import Styles -->
     <link rel="stylesheet" href="./assets/styles.css" />
-    <!-- import Vue.js -->
+    <!-- Import Vue.js -->
     <script src="https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
   </head>
   <body>
@@ -26,17 +26,22 @@
             <ul>
               <li v-for="detail in details">{{ detail }}</li>
             </ul>
-            <div  v-for="variant in variants" :key="variant.id">{{ variant.color }}</div>
-            <button class="button">Add to cart</button>
+
+            <div 
+              v-for="variant in variants" 
+              :key="variant.id" 
+              @mouseover="updateImage(variant.image)" 
+            >{{ variant.color }}</div>
+            <button class="button" @click="addToCart">Add to Cart</button>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- import App -->
+    <!-- Import App -->
     <script src="./main.js"></script>
 
-    <!-- mount App -->
+    <!-- Mount App -->
     <script>
       const mountedApp = app.mount('#app')
     </script>
